@@ -29,24 +29,32 @@ namespace AlphaGame.Framework
         {
             menu = new MenuComponent(vars.Game,
                 x: vars.GraphicsDevice.Viewport.Width / 2,
-                y: vars.GraphicsDevice.Viewport.Height - vars.GraphicsDevice.Viewport.Height / 3,
+                y: vars.GraphicsDevice.Viewport.Height - (vars.GraphicsDevice.Viewport.Height/3),
+                inactiveColor: Color.White,
+                activeColor: Color.Wheat,
                 font: "Fonts/menu");
 
-            menu.Add("Test 1", new MenuItemCallback(Test1));
-            menu.Add("Test 2", new MenuItemCallback(Test2));
+            menu.Add("START GAME", new MenuItemCallback(StartGame));
+            menu.Add("HIGH SCORES", new MenuItemCallback(HighScores));
+            menu.Add("EXIT", new MenuItemCallback(ExitGame));            
 
             background = vars.Content.Load<Texture2D>("Artwork/background");
             titleFont = vars.Content.Load<SpriteFont>("Fonts/title");
         }
 
-        private void Test1()
+        private void StartGame()
         {
             vars.Game.Window.Title = "Test 1";
         }
 
-        private void Test2()
+        private void HighScores()
         {
             vars.Game.Window.Title = "Test 2";
+        }
+
+        private void ExitGame()
+        {
+            vars.Game.Window.Title = "Test 3";
         }
 
         public void Update(GameTime gameTime)
