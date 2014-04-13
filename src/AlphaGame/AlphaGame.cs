@@ -5,30 +5,14 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
+using AlphaGame.Framework;
 
 namespace AlphaGame
 {
     public class AlphaGame : Game
     {
-        protected GraphicsDeviceManager graphics;
-        protected SpriteBatch spriteBatch;
-        private Texture2D background, sand, ship;
-
-        private int DisplayWidth
-        {
-            get
-            {
-                return this.graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Width;
-            }
-        }
-
-        private int DisplayHeight
-        {
-            get
-            {
-                return this.graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Height;
-            }
-        }
+        private GraphicsDeviceManager graphics;
+        private VariableService vars;
 
         public AlphaGame()
             : base()
@@ -48,36 +32,26 @@ namespace AlphaGame
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            background = this.Content.Load<Texture2D>("Artwork/background");
-            sand = this.Content.Load<Texture2D>("Artwork/sand");
-            ship = this.Content.Load<Texture2D>("Artwork/ship");
-        }
-
-        protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
+            ServiceExtensionMethods.AddService<VariableService>(this.Services, new VariableService());
+            vars = ServiceExtensionMethods.GetService<VariableService>(this.Services);
+            vars.Game = this;
+            vars.Content = Content;
+            vars.Graphics = graphics;
+            vars.GraphicsDevice = graphics.GraphicsDevice;
+            vars.SpriteBatch = new SpriteBatch(GraphicsDevice);
+            vars.CurrentScreen = new TitleScreen(this);    
         }
 
         protected override void Update(GameTime gameTime)
         {
-            // TODO: Add your update logic here
-
+            vars.CurrentScreen.Update(gameTime);
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
-
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
-            spriteBatch.Draw(sand, new Rectangle(100, 100, 20, 20), Color.White);
-            
-
-            spriteBatch.End();
-
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+            vars.CurrentScreen.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

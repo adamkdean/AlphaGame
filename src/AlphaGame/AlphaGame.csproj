@@ -38,8 +38,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlphaGame.cs" />
+    <Compile Include="Framework\VariableService.cs" />
+    <Compile Include="Framework\ServiceExtensionMethods.cs" />
+    <Compile Include="Framework\IScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\TitleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
