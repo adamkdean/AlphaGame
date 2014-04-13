@@ -14,10 +14,17 @@ namespace AlphaGame.Framework
     class TitleScreen : IScreen
     {
         private VariableService vars;
+        private Texture2D background;
 
         public TitleScreen(Game game)
         {
             vars = ServiceExtensionMethods.GetService<VariableService>(game.Services);
+            LoadContent();
+        }
+
+        private void LoadContent()
+        {
+            background = vars.Content.Load<Texture2D>("Artwork/background");
         }
 
         public void Update(GameTime gameTime)
@@ -28,11 +35,11 @@ namespace AlphaGame.Framework
 
         public void Draw(GameTime gameTime)
         {
-            //vars.GraphicsDevice.Clear(Color.Black);
+            vars.GraphicsDevice.Clear(Color.Black);
 
-            //spriteBatch.Begin();
-            //spriteBatch.Draw(background, new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
-            //spriteBatch.End();
+            vars.SpriteBatch.Begin();
+            vars.SpriteBatch.Draw(background, new Rectangle(0, 0, vars.DisplayWidth, vars.DisplayHeight), Color.White);
+            vars.SpriteBatch.End();
         }
     }
 }
