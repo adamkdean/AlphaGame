@@ -12,7 +12,23 @@ namespace AlphaGame
     {
         protected GraphicsDeviceManager graphics;
         protected SpriteBatch spriteBatch;
-        protected Texture2D blue, green;
+        private Texture2D background, sand, ship;
+
+        private int DisplayWidth
+        {
+            get
+            {
+                return this.graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Width;
+            }
+        }
+
+        private int DisplayHeight
+        {
+            get
+            {
+                return this.graphics.GraphicsDevice.Adapter.CurrentDisplayMode.Height;
+            }
+        }
 
         public AlphaGame()
             : base()
@@ -23,7 +39,9 @@ namespace AlphaGame
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.PreferredBackBufferHeight = 600;
+            graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -32,8 +50,9 @@ namespace AlphaGame
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            blue = this.Content.Load<Texture2D>("Artwork/blue");
-            green = this.Content.Load<Texture2D>("Artwork/green");
+            background = this.Content.Load<Texture2D>("Artwork/background");
+            sand = this.Content.Load<Texture2D>("Artwork/sand");
+            ship = this.Content.Load<Texture2D>("Artwork/ship");
         }
 
         protected override void UnloadContent()
@@ -53,8 +72,9 @@ namespace AlphaGame
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(blue, new Rectangle(100, 100, 20, 20), Color.White);
-            spriteBatch.Draw(green, new Rectangle(200, 200, 20, 20), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, DisplayWidth, DisplayHeight), Color.White);
+            spriteBatch.Draw(sand, new Rectangle(100, 100, 20, 20), Color.White);
+            
 
             spriteBatch.End();
 
