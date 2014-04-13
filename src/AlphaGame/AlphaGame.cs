@@ -10,8 +10,9 @@ namespace AlphaGame
 {
     public class AlphaGame : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        protected GraphicsDeviceManager graphics;
+        protected SpriteBatch spriteBatch;
+        protected Texture2D blue, green;
 
         public AlphaGame()
             : base()
@@ -29,12 +30,10 @@ namespace AlphaGame
 
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-
-            this.Content.Load<Texture2D>("Artwork/blue");
+            blue = this.Content.Load<Texture2D>("Artwork/blue");
+            green = this.Content.Load<Texture2D>("Artwork/green");
         }
 
         protected override void UnloadContent()
@@ -51,9 +50,13 @@ namespace AlphaGame
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            spriteBatch.Draw(blue, new Rectangle(100, 100, 20, 20), Color.White);
+            spriteBatch.Draw(green, new Rectangle(200, 200, 20, 20), Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
