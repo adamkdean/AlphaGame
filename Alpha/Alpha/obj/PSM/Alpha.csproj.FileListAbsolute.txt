@@ -1,0 +1,4 @@
+C:\Users\Adam\Desktop\AlphaGame\Alpha\Alpha\bin\PSM\IgnoreMe.dll
+C:\Users\Adam\Desktop\AlphaGame\Alpha\Alpha\obj\PSM\Alpha.csprojResolveAssemblyReference.cache
+C:\Users\Adam\Desktop\AlphaGame\Alpha\Alpha\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Adam\Desktop\AlphaGame\Alpha\Alpha\obj\PSM\IgnoreMe.dll
