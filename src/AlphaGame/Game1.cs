@@ -49,6 +49,8 @@ namespace AlphaGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            this.Content.Load<Texture2D>("Artwork/blue");
         }
 
         /// <summary>
