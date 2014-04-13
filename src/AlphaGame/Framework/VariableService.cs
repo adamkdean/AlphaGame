@@ -17,7 +17,7 @@ namespace AlphaGame.Framework
         {
             get
             {
-                return GraphicsDevice.Adapter.CurrentDisplayMode.Width;
+                return GraphicsDevice.Viewport.Width;
             }
         }
 
@@ -25,7 +25,7 @@ namespace AlphaGame.Framework
         {
             get
             {
-                return GraphicsDevice.Adapter.CurrentDisplayMode.Height;
+                return GraphicsDevice.Viewport.Height;
             }
         }
     }
