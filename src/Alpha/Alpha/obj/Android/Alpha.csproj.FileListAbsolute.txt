@@ -1,4 +1,0 @@
-C:\Users\Adam\Desktop\Alpha\Alpha\Alpha\bin\Android\IgnoreMe.dll
-C:\Users\Adam\Desktop\Alpha\Alpha\Alpha\obj\Android\Alpha.csprojResolveAssemblyReference.cache
-C:\Users\Adam\Desktop\Alpha\Alpha\Alpha\obj\Android\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\Adam\Desktop\Alpha\Alpha\Alpha\obj\Android\IgnoreMe.dll
