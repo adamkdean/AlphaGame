@@ -12,5 +12,21 @@ namespace AlphaGame.Framework
         public ContentManager Content { get; set; }
         public SpriteBatch SpriteBatch { get; set; }
         public IScreen CurrentScreen { get; set; }
+
+        public int DisplayWidth
+        {
+            get
+            {
+                return GraphicsDevice.Adapter.CurrentDisplayMode.Width;
+            }
+        }
+
+        public int DisplayHeight
+        {
+            get
+            {
+                return GraphicsDevice.Adapter.CurrentDisplayMode.Height;
+            }
+        }
     }
 }
