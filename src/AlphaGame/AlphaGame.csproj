@@ -38,9 +38,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlphaGame.cs" />
-    <Compile Include="Framework\VariableService.cs" />
-    <Compile Include="Framework\ServiceExtensionMethods.cs" />
-    <Compile Include="Framework\IScreen.cs" />
+    <Compile Include="Components\MenuComponent.cs" />
+    <Compile Include="Framework\Interfaces\IComponent.cs" />
+    <Compile Include="Framework\Services\VariableService.cs" />
+    <Compile Include="Framework\Extensions\ServiceExtensionMethods.cs" />
+    <Compile Include="Framework\Interfaces\IScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\TitleScreen.cs" />
