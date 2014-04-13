@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpha", "Alpha\Alpha\Alpha.csproj", "{63625741-44DC-44DE-BAA2-B83C692B299C}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "AlphaContent", "Alpha\AlphaContent\AlphaContent.contentproj", "{CA5DDAD2-C49D-48D7-8B20-C291F8F54402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaContent", "Alpha\AlphaContent\AlphaContent.contentproj", "{CA5DDAD2-C49D-48D7-8B20-C291F8F54402}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaGame", "AlphaGame\AlphaGame.csproj", "{6C5C5F82-A228-4018-B268-6EFAD60A2BCF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63625741-44DC-44DE-BAA2-B83C692B299C} = {63625741-44DC-44DE-BAA2-B83C692B299C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
