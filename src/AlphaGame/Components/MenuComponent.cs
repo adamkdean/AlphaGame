@@ -54,25 +54,25 @@ namespace AlphaGame.Components
 
         private void UpdateInput()
         {
-            KeyboardState ks = Keyboard.GetState();
+            KeyboardState keyboardState = Keyboard.GetState();
 
-            if (ks.IsKeyDown(Keys.Down) && !oks.IsKeyDown(Keys.Down))
+            if (keyboardState.IsKeyDown(Keys.Down) && !vars.OldKeyboardState.IsKeyDown(Keys.Down))
             {
                 menuIndex++;
                 if (menuIndex == items.Count) menuIndex = 0;
             }
-            else if (ks.IsKeyDown(Keys.Up) && !oks.IsKeyDown(Keys.Up))
+            else if (keyboardState.IsKeyDown(Keys.Up) && !vars.OldKeyboardState.IsKeyDown(Keys.Up))
             {
                 menuIndex--;
                 if (menuIndex < 0) menuIndex = items.Count - 1;
             }
-            else if (ks.IsKeyDown(Keys.Enter) && !oks.IsKeyDown(Keys.Enter))
+            else if (keyboardState.IsKeyDown(Keys.Enter) && !vars.OldKeyboardState.IsKeyDown(Keys.Enter))
             {
                 var key = items.Keys.ElementAt(menuIndex);
                 items[key].Invoke();
             }
 
-            oks = ks;
+            vars.OldKeyboardState = keyboardState;
         }
 
         public void Draw(GameTime gameTime)

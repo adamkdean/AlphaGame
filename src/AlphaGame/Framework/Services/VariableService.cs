@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 
 namespace AlphaGame.Framework
 {
@@ -12,6 +13,8 @@ namespace AlphaGame.Framework
         public ContentManager Content { get; set; }
         public SpriteBatch SpriteBatch { get; set; }
         public IScreen CurrentScreen { get; set; }
+        //public KeyboardState CurrentKeyboardState { get; set; }
+        public KeyboardState OldKeyboardState { get; set; }
 
         public int DisplayWidth
         {
