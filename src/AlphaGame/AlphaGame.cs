@@ -23,8 +23,8 @@ namespace AlphaGame
 
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 800; // 25 * 32px
+            graphics.PreferredBackBufferHeight = 640; // 20 * 32px
             graphics.ApplyChanges();
 
             ServiceExtensionMethods.AddService<VariableService>(this.Services, new VariableService());

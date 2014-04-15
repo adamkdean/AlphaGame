@@ -38,6 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AlphaGame.cs" />
+    <Compile Include="Components\GridComponent.cs" />
     <Compile Include="Components\MenuComponent.cs" />
     <Compile Include="Framework\Interfaces\IComponent.cs" />
     <Compile Include="Framework\Services\VariableService.cs" />

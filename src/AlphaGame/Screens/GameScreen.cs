@@ -15,22 +15,31 @@ namespace AlphaGame.Framework
     class GameScreen : IScreen
     {
         private VariableService vars;
-        private Texture2D background;
+        private Texture2D background, sand, ship;
+        private GridComponent grid;
         
         public GameScreen(Game game)
         {
             vars = ServiceExtensionMethods.GetService<VariableService>(game.Services);
             LoadContent();
+            InitialiseGame();
         }
 
         private void LoadContent()
         {
             background = vars.Content.Load<Texture2D>("Artwork/background");
+            sand = vars.Content.Load<Texture2D>("Artwork/sand");
+            ship = vars.Content.Load<Texture2D>("Artwork/ship");
+        }
+
+        private void InitialiseGame()
+        {
+            grid = new GridComponent(vars.Game, 32, sand);
         }
 
         public void Update(GameTime gameTime)
         {
-            //
+            grid.Update(gameTime);
         }
 
         public void Draw(GameTime gameTime)
@@ -38,6 +47,7 @@ namespace AlphaGame.Framework
             vars.GraphicsDevice.Clear(Color.Black);
             vars.SpriteBatch.Begin();
             DrawBackground();
+            grid.Draw(gameTime);
             vars.SpriteBatch.End();
         }
 

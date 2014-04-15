@@ -11,7 +11,9 @@ namespace AlphaGame
         static void Main()
         {
             using (var game = new AlphaGame())
+            {
                 game.Run();
+            }
         }
     }
 #endif

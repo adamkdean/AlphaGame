@@ -13,13 +13,12 @@ namespace AlphaGame.Components
 
     class MenuComponent : IComponent
     {
-        private Dictionary<string, MenuItemCallback> items;
-        private Color activeColor, inactiveColor;
-        private KeyboardState oks;
-        private VariableService vars;
-        private SpriteFont menuFont;
-        private Vector2 position;
-        private int menuIndex = 0;
+        protected VariableService vars;
+        protected Dictionary<string, MenuItemCallback> items;
+        protected Color activeColor, inactiveColor;
+        protected SpriteFont menuFont;
+        protected Vector2 position;
+        protected int menuIndex = 0;
 
         public MenuComponent(Game game, int x, int y, string font, Color activeColor, Color inactiveColor)
         {
